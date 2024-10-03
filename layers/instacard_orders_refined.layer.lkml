@@ -2,19 +2,14 @@
 include: "/views/**/*.view.lkml"
 
 # The name of this view in Looker is "Instacart Orders"
-view: +instacart_orders {
-  measure: total_order_number {
-    type: sum
-    sql: ${order_number} ;;  }
-
+view : +instacart_orders {
   measure: count {
-    type: count
-    drill_fields: [order_id]
+    hidden: no
   }
 }
 
 view : +instacart_orders {
-  measure: count {
+  dimension: order_dow {
     hidden: yes
   }
 }

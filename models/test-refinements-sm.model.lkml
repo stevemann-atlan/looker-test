@@ -29,7 +29,9 @@ persist_with: test_refinements_sm_default_datagroup
 
 explore: instacart_aisles {}
 
-explore: instacart_orders {}
+explore: instacart_orders {
+  view_name: instacart_orders
+}
 
 explore: instacart_products {}
 

@@ -18,3 +18,9 @@ view : +instacart_orders {
     hidden: yes
   }
 }
+
+view : +instacart_orders {
+  measure: count {
+    hidden: yes
+  }
+}

@@ -12,3 +12,9 @@ view: +instacart_orders {
     drill_fields: [order_id]
   }
 }
+
+view : +instacart_orders {
+  dimension: order_dow {
+    hidden: yes
+  }
+}

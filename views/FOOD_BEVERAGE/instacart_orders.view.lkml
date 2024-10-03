@@ -46,9 +46,6 @@ view: instacart_orders {
   # measures for this dimension, but you can also add measures of many different aggregates.
   # Click on the type parameter to see all the options in the Quick Help panel on the right.
 
-  measure: total_order_number {
-    type: sum
-    sql: ${order_number} ;;  }
   measure: average_order_number {
     type: average
     sql: ${order_number} ;;  }
@@ -56,9 +53,5 @@ view: instacart_orders {
   dimension: user_id {
     type: number
     sql: ${TABLE}."user_id" ;;
-  }
-  measure: count {
-    type: count
-    drill_fields: [order_id]
   }
 }

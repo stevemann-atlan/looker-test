@@ -32,11 +32,6 @@ view: instacart_orders {
     sql: ${TABLE}."order_dow" ;;
   }
 
-  dimension: order_hour_of_day {
-    type: number
-    sql: ${TABLE}."order_hour_of_day" ;;
-  }
-
   dimension: order_number {
     type: number
     sql: ${TABLE}."order_number" ;;

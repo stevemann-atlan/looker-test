@@ -36,7 +36,3 @@ explore: instacart_orders {
 explore: instacart_products {}
 
 explore: products {}
-
-explore: +products {
-  view_name: instacart_aisles
-}

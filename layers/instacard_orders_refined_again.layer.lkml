@@ -7,3 +7,9 @@ view : +instacart_orders {
     hidden: no
   }
 }
+
+view : +instacart_orders {
+  dimension: order_dow {
+    hidden: yes
+  }
+}

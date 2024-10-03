@@ -14,12 +14,6 @@ view: +instacart_orders {
 }
 
 view : +instacart_orders {
-  dimension: order_dow {
-    hidden: yes
-  }
-}
-
-view : +instacart_orders {
   measure: count {
     hidden: yes
   }

@@ -32,15 +32,3 @@ explore: instacart_aisles {}
 explore: instacart_orders {
   view_name: instacart_orders
 }
-
-explore: instacart_products {}
-
-explore: products {}
-
-explore: +products {
-  join: instacart_order_products_master {
-    type: left_outer
-    sql_on: ${products.product_name} = ${instacart_order_products_master.product_name} ;;
-    relationship: one_to_one
-  }
-}

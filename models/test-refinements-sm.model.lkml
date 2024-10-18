@@ -1,8 +1,6 @@
 # Define the database connection to be used for this model.
 connection: "atlan_sample_data"
 
-# include all the views
-include: "/views/**/*.view.lkml"
 # include all the layers
 include: "/layers/**/*.layer.lkml"
 
@@ -27,7 +25,7 @@ persist_with: test_refinements_sm_default_datagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
-explore: instacart_aisles {}
+
 
 explore: instacart_orders {
   view_name: instacart_orders

@@ -3,6 +3,7 @@ include: "/views/**/*.view.lkml"
 
 # The name of this view in Looker is "Instacart Orders"
 view: +instacart_orders {
+  final: yes
   measure: total_order_number {
     type: sum
     sql: ${order_number} ;;  }

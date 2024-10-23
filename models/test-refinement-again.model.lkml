@@ -1,6 +1,7 @@
-include: "/views/**/*.view.lkml"                # include all views in the views/ folder in this project
-include: "/models/*.model.lkml"
+connection: "atlan_sample_data"
 
-explore: instacart_top_users  {
-  view_name: instacart_top_users
+include: "/views/**/*.view.lkml"                # include all views in the views/ folder in this project
+
+explore: instacart_orders_from_view  {
+  view_name: instacart_orders
 }

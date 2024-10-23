@@ -35,7 +35,3 @@ explore: instacart_orders {
 explore: instacart_products {
   from: instacart_products
 }
-
-explore: +instacart_products {
-  from:  instacart_order_products
-}

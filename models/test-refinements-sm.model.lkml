@@ -3,6 +3,7 @@ connection: "atlan_sample_data"
 
 # include all the layers
 include: "/layers/**/*.layer.lkml"
+include: "/views/**/*.view.lkml"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
@@ -29,4 +30,15 @@ persist_with: test_refinements_sm_default_datagroup
 
 explore: instacart_orders {
   view_name: instacart_orders
+}
+
+explore: instacart_products {
+  from: instacart_products
+}
+
+explore: +instacart_products {
+  join: instacart_order_products {
+    sql_on: ${instacart_order_products.product_id}} = ${instacart_products.product_id} ;;
+    relationship: many_to_one
+  }
 }

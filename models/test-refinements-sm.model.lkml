@@ -37,8 +37,5 @@ explore: instacart_products {
 }
 
 explore: +instacart_products {
-  join: instacart_order_products {
-    sql_on: ${instacart_order_products.product_id}} = ${instacart_products.product_id} ;;
-    relationship: many_to_one
-  }
+  from:  instacart_order_products
 }

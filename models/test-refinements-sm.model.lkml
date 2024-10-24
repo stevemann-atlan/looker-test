@@ -42,16 +42,3 @@ explore: +instacart_products {
     relationship: many_to_one
   }
 }
-
-explore: instacart_products_test_from {
-  from: instacart_orders
-}
-
-explore: +instacart_products_test_from {
-  from: instacart_order_products
-
-  join: instacart_orders_summary {
-    sql_on: ${instacart_products_test_from.order_id} = ${instacart_orders_summary.order_id} ;;
-    relationship: many_to_one
-  }
-}

@@ -10,7 +10,6 @@ explore: +another_test_order_explore  {
   hidden: yes
 }
 
-
 explore: +instacart_products_test_from {
   from: instacart_order_products
 

@@ -1,18 +1,19 @@
 # Define the database connection to be used for this model.
-connection: "testsmmssql"
+connection: "atlan_sample_data"
 
-# include all the views
+# include all the layers
+include: "/layers/**/*.layer.lkml"
 include: "/views/**/*.view.lkml"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
 
-datagroup: testrefinementssmdatagroup {
+datagroup: test_refinements_sm_default_datagroup {
   # sql_trigger: SELECT MAX(id) FROM etl_log;;
   max_cache_age: "1 hour"
 }
 
-persist_with: testrefinementssmdatagroup
+persist_with: test_refinements_sm_default_datagroup
 
 # Explores allow you to join together different views (database tables) based on the
 # relationships between fields. By joining a view into an Explore, you make those
@@ -25,30 +26,19 @@ persist_with: testrefinementssmdatagroup
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
 
-explore: authors {}
 
-explore: books {}
 
-explore: cities {}
+explore: instacart_orders {
+  view_name: instacart_orders
+}
 
-explore: countries {}
+explore: instacart_products {
+  from: instacart_products
+}
 
-explore: countries_archive {}
-
-explore: delivery_methods {}
-
-explore: delivery_methods_archive {}
-
-explore: payment_methods {}
-
-explore: payment_methods_archive {}
-
-explore: people {}
-
-explore: people_archive {}
-
-explore: state_provinces {}
-
-explore: transaction_types {}
-
-explore: transaction_types_archive {}
+explore: +instacart_products {
+  join: instacart_order_products {
+    sql_on: ${instacart_order_products.order_id} = ${instacart_order_products.order_id} ;;
+    relationship: many_to_one
+  }
+}

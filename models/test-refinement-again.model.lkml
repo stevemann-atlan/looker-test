@@ -1,5 +1,5 @@
 
-include: "/views/**/*.view.lkml"
+include: "/views/FOOD_BEVERAGE/*.view.lkml"
 include: "/models/instacart_orders_from_model.model.lkml"
 
 explore: instacart_orders_from_view  {

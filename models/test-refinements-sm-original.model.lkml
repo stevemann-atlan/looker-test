@@ -3,7 +3,7 @@ connection: "atlan_sample_data"
 
 # include all the layers
 include: "/layers/**/*.layer.lkml"
-include: "/views/**/*.view.lkml"
+include: "/views/FOOD_BEVERAGE/*.view.lkml"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.

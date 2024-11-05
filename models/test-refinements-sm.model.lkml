@@ -2,7 +2,7 @@
 connection: "testsmmssql"
 
 # include all the views
-include: "/views/**/*.view.lkml"
+include: "/explores/*.explore.lkml"
 
 # Datagroups define a caching policy for an Explore. To learn more,
 # use the Quick Help panel on the right to see documentation.
@@ -24,31 +24,3 @@ persist_with: testrefinementssmdatagroup
 # To create more sophisticated Explores that involve multiple views, you can use the join parameter.
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
-
-explore: authors {}
-
-explore: books {}
-
-explore: cities {}
-
-explore: countries {}
-
-explore: countries_archive {}
-
-explore: delivery_methods {}
-
-explore: delivery_methods_archive {}
-
-explore: payment_methods {}
-
-explore: payment_methods_archive {}
-
-explore: people {}
-
-explore: people_archive {}
-
-explore: state_provinces {}
-
-explore: transaction_types {}
-
-explore: transaction_types_archive {}
